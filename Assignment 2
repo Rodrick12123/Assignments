@@ -1,0 +1,93 @@
+public class Book{
+    private int bookNo
+    private String title
+    private String author
+    private float price
+    private static  int bookCount;
+
+	public int static getBookCount( ){
+        return bookCount
+    }
+    static{
+        bookCount = 0;
+    }
+
+    public Book(no,btitle,bauthor,bprice){
+        bookno = no;
+        title = btitle;
+        author = bauthor;
+        price = bprice;
+        bookCount++;
+        if(title.length < 4){
+            System.out.println("Error: Title needs at least 4 characters");
+        }
+        if(price < 1 || price > 5000){
+            System.out.println("Error: please enter a price ranging from 1-5000");
+        }
+    }
+    void getDetails(){
+        Scanner sc = new Scanner();
+
+        System.out.println("Enter Book Number");
+        bookno = sc.nextInt();
+        System.out.println("Enter Book Title");
+        title = sc.nextLine();
+        System.out.println("Enter Book Author");
+        author = sc.nextLine();
+        System.out.println("Enter Book Price");
+        price = sc.nextInt();
+    }
+    void toString(){
+        System.out.println("Book Number" + bookno)
+        Systme.out.println("Title"+title)
+        Systme.out.println("Author"+author)
+        Systme.out.println("Price"+price)
+
+
+    }
+}
+
+public class BookDetails{
+    public static void main(String args[]){
+        Book book = new Book();
+        book.getDetails();
+
+        Book book2 = new Book();
+        book2.getDetails();
+        Book book3 = new Book();
+        book3.getDetails();
+        Book book4 = new Book();
+        book4.getDetails();
+
+        int[] books = new int[4];
+        books[0] = book;
+        books[1] = book2;
+        books[2] = book3;
+        books[3] = book4;
+
+        System.out.println("Search for book by book number");
+        number = sc.nextInt();
+        boolean found = false
+        for(Book book : books){
+            if(book.bookno == number){
+                book.getDetails();
+            }
+        }
+        if(!found){
+            System.out.println("Error: No book with this number exsist.")
+        }
+
+        EngineeringBook Ebook = new EngineeringBook();
+    }
+}
+
+public class EngineeringBook extends Book{
+    private String category;
+
+    void setCategory(String category){
+        this.category = category;
+    }
+    void getCategory(){
+        return category;
+    }
+}
