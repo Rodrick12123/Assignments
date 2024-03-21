@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 class Assignment1{
@@ -165,5 +167,63 @@ class Assignment1{
         String s = new String(arr);
         return s;
 
+    }
+    public boolean checkDigit(char c){
+        if(c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == '0'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public void countVowCon(String s){
+        int vowels = 0;
+        int consonants = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char chr = s.charAt(i);
+            if (Character.isLetter(chr)) {
+                // Check if the letter is a vowel
+                if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+    }
+    public char highestFrq(String s){
+        Map<Character, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
+            
+        }
+
+        char maxChar = '\0';
+        int frq = 0;
+        for (Map.Entry<Character, Integer> e : map.entrySet()) {
+            if (e.getValue() > frq) {
+                frq = e.getValue();
+                maxChar = e.getKey();
+            }
+        }
+        return maxChar;
+    }
+    public boolean anagram(String s1, String s2){
+        char[] arr1 = s1.toCharArray();
+        char[] arr2 = s2.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        return Arrays.equals(arr1, arr2);
+    }
+    public int sumInt(String s){
+        char[] arr = s.toCharArray();
+        int sum = 0;
+        for(int i = 0; i<arr.length;i++){
+            sum += arr[i];
+        }
+        return sum;
     }
 }
