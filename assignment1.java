@@ -183,11 +183,14 @@ class Assignment1{
             char chr = s.charAt(i);
             if (Character.isLetter(chr)) {
                 // Check if the letter is a vowel
-                if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') {
-                    vowels++;
-                } else {
-                    consonants++;
+                if(Character.isAlphabetic(chr)){
+                    if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') {
+                        vowels++;
+                    } else {
+                        consonants++;
+                    }
                 }
+                
             }
         }
     }
