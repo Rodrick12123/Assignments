@@ -21,6 +21,7 @@ class Student{
             name = sc.nextLine();
             if(name.equals("done")){
                 done = true;
+                sc.close();
             }else{
                 names.add(name);
             }
@@ -45,7 +46,7 @@ class Student{
         names.remove(stuName);
     }
 }
-class Student2{
+class Employee{
     private HashMap<String,String> empNames;
     public void setNames( ) {
         Scanner sc = new Scanner(System.in);
@@ -54,6 +55,7 @@ class Student2{
         while(true){
             name = sc.nextLine();
             if (name == "done") {
+                sc.close();
                 break;
             }
             empNames.put(name, "0");
@@ -90,5 +92,16 @@ class ArrayListDemo{
         student.searchName(0);
         student.searchName("null");
         
+    }
+}
+
+class TestHashMap{
+    public static void main(String[] args) {
+        Employee e = new Employee();
+        e.setNames();
+        e.printNames();
+        e.remove("null");
+        e.printNamesKeySet();
+        e.printSize();
     }
 }
