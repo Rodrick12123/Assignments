@@ -1,16 +1,24 @@
-public test{
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+public class test{
     public static void main(String args[]){
         //solution 1
         for(int i =0; i<n.length;i++){
-            if(i%2 = 0){
-                System.out.println(i)
+            if(i%2 == 0){
+                System.out.println(i);
             }
         }
 
         //solution 2
-        Scanner sc = new Scanner();
+        Scanner sc = new Scanner(System.in);
         int a[] = sc.next();
-        sum = 0;
+        int sum = 0;
         for(int v : a){
             sum += v
         }
